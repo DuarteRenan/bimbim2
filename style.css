@@ -620,11 +620,6 @@ footer img{
 }
 
 @media(min-width: 60rem){
-   
-    .navbar{
-        /* max-width:88vw; */
-    }
-
     .nav-menu {
         display:flex;
         flex-direction: row;
