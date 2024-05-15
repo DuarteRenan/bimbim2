@@ -25,7 +25,7 @@
     --clr-accenture:#59849d;
 
     /* fonts */
-   --fs-section-titles: clamp(1.375rem, 0.0841rem + 4.8598vi, 3rem);
+   --fs-section-titles: clamp(1.375rem, 0.4813rem + 3.3645vi, 2.5rem);
    --fs-full-body-width: clamp(1rem, 0.8014rem + 0.7477vi, 1.25rem);
 
    /* margins - spacings */
@@ -192,7 +192,7 @@ header{
 
 
 .logo{
-    max-width: 5rem;
+    max-width: 8rem;
     padding-block:.4rem;
     vertical-align: middle;
 }
@@ -317,11 +317,21 @@ section p:last-of-type {
 
 #servicos h2{
     margin-bottom:var(--mb-xs);
-    text-align: left;
+    text-align: center;
+}
+.card {
+    background:#f0f0f0;
+    padding:1rem;
+    transition:box-shadow .2s;
+}
+
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        transition:box-shadow .2s;
 }
 
 .card h3{
-    font-size: clamp(1.125rem, 0.9264rem + 0.7477vi, 1.375rem);
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: -0.01em;
     line-height: 100%;
@@ -337,13 +347,13 @@ section p:last-of-type {
     margin-inline:0px ;
     margin-bottom:var(--mb-l);
     max-width: 75ch;
-    text-align: left;
+    text-align: center;
 }
 
 .card__wrapper{
     --column-count:1;
     display:grid;
-    gap: var(--mb-xl);
+    gap: var(--mb-m);
 
     grid-template-columns: repeat(var(--column-count), 1fr);
 
@@ -380,7 +390,7 @@ section p:last-of-type {
 }
 
 .sobre__txt-wrapper figure, .video__wrapper {
-    width:min(100%, 50rem);
+    width:min(100%, 40rem);
     margin-inline:auto;
 }
 
@@ -388,7 +398,7 @@ section p:last-of-type {
     text-align: center;
 }
 
-.mapa figcaption {
+.video__wrapper figcaption {
     font-size:0.625rem;
     text-align: right;
     margin:0px;
@@ -568,8 +578,8 @@ footer{
    
 }
 
-footer div img{
-    max-width:7.5rem;
+footer img{
+    max-width:10rem;
 }
 
 .legal-txt{
@@ -615,7 +625,7 @@ footer div img{
 @media(min-width: 60rem){
    
     .navbar{
-        max-width:88vw;
+        /* max-width:88vw; */
     }
 
     .nav-menu {
@@ -645,8 +655,29 @@ footer div img{
     }
 
     .section-title{
+        margin-inline:auto;
         text-align: center;
     }
+    
+    .sobre__txt-wrapper {
+        display:grid;
+        grid-template-columns:repeat(10);
+        column-gap: var(--mb-l);
+        justify-content: center;
+        align-content: center;
+    }
+
+    .sobre__txt-wrapper .section-title{
+        grid-column:span 10;
+    }
+
+    .sobre__txt-wrapper p:first-of-type {
+        grid-column:span 6;
+    }
+    .sobre__txt-wrapper p:nth-of-type(2) {
+        grid-column:span 4;
+    }
+
 
     #video-player{
         margin-top: var(--mb-xl);
@@ -664,7 +695,7 @@ footer div img{
     }
 
     .card h3{
-        margin: var(--mb-s) auto var(--mb-xs);
+        margin: var(--mb-m) auto ;
     }
 
     .card__wrapper{
@@ -693,8 +724,9 @@ footer div img{
     footer{
         width:100%;
         flex-direction: row;
-        align-items: start;
         padding-block:3vh;
+        align-items: center;
+     
      
     }
 
@@ -709,16 +741,15 @@ footer div img{
     }
 
     .legal-txt p{
-        margin-top:var(--mb-m);
+     
     }
     .legal-txt p:nth-child(2){
-        margin-top:.9em;
+        margin-top:.2em;
     }
 
     .social-footer-icons{
     justify-content: flex-end;
-    align-self:baseline;
-    align-self: center;
+    align-self:center;
 }
 
 .display-none{display: none;}
