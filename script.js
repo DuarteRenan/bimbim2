@@ -28,22 +28,18 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    //fim menu
-
-    //video
+    // Video
     const videoWrapper = document.querySelector('.video__wrapper')
     const videoPlayer = document.querySelector('#video-player')
 
     videoWrapper.addEventListener('click', videoPlay);
 
     function videoPlay() {
-
         videoPlayer.controls = true;
         videoPlayer.setAttribute('autoplay', '');
     }
-   
-    // section animation
 
+    // Section animation
     const sections = document.querySelectorAll('section');
 
     sections.forEach(section => {
@@ -61,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Define o valor do atributo "data-screen-show" com base na visibilidade do elemento
                 child.setAttribute('data-screen-show', isVisible ? 'true' : 'false');
             });
-    
         });
     }
 
@@ -78,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Observa cada seção
         observer.observe(section);
     });
-    
+
     // Clientes animation
     const scrollers = document.querySelectorAll(".scroller-wrapper");
 
@@ -91,4 +86,24 @@ document.addEventListener('DOMContentLoaded', function () {
             scroller.setAttribute("data-animated", true)
         });
     }
+
+    const links = document.getElementsByTagName("a");
+    //Browse the previously created array
+    Array.prototype.forEach.call(links, function (elem) {
+        //Get the hyperlink target and if it refers to an id go inside condition
+        var elemAttr = elem.getAttribute("href");
+        if (elemAttr && elemAttr.includes("#")) {
+            //Replace the regular action with a scrolling to target on click
+            elem.addEventListener("click", function (ev) {
+                ev.preventDefault();
+                //Scroll to the target element using replace() and regex to find the href's target id
+                document.getElementById(elemAttr.replace(/#/g, "")).scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "nearest"
+                });
+            });
+        }
+    });
+
 });
