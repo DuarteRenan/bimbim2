@@ -267,17 +267,20 @@ section {
 }
 
 [data-screen-show="false"]{
-    transform:translateX(-3rem);
+    transform:translateY(+3rem);
     visibility: hidden;
     opacity: 0;
     transition: transform 0.6s ease-in-out, opacity 0.5s ease-in-out;
+    position:relative;
 }
 
 [data-screen-show="true"]{
-    transform:translateX(0);
+    transform:translateY(0);
     visibility: visible;
     opacity: 1;
     transition: transform 0.6s ease-in-out, opacity 0.5s ease-in-out;
+  
+    position:relative;
 }
 
 section p:last-of-type {
