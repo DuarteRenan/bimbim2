@@ -25,9 +25,8 @@
     --clr-accenture:#59849d;
 
     /* fonts */
-   --fs-big-title: clamp(2.125rem, 1.475rem + 3.25vi, 3.75rem);
-   --fs-section-titles: clamp(1.625rem, 1.075rem + 2.75vi, 3rem);
-   --fs-full-body-width: clamp(1.125rem, 1.075rem + 0.25vi, 1.25rem);
+   --fs-section-titles: clamp(1.375rem, 0.0841rem + 4.8598vi, 3rem);
+   --fs-full-body-width: clamp(1rem, 0.8014rem + 0.7477vi, 1.25rem);
 
    /* margins - spacings */
    --mb-xxs: 0.266em;
@@ -65,19 +64,13 @@ h1, h2 {
     letter-spacing: -0.01em;
 }
 
-h3 {
 
-    font-size:clamp(1.375rem, 1.275rem + 0.5vi, 1.625rem);
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    line-height: 100%;
-}
 
 img{
     max-width: 100%;
 }
 
-  .wrapper{
+  .wrapper {
     width:min(88vw, 60rem);
     margin-inline:auto;
 }
@@ -233,7 +226,7 @@ header{
 
 #home h1{
     text-transform:initial;
-    font-size:clamp(2.125rem, 1.475rem + 3.25vi, 3.75rem);
+    font-size:clamp(2.125rem, 0.8341rem + 4.8598vi, 3.75rem);
     width: 100%;
     font-family: "Inter Tight", sans-serif;
     
@@ -241,9 +234,11 @@ header{
 
 #home p{
     margin-top:var(--mb-s);
+    font-size:  clamp(1.25rem, 1.1507rem + 0.3738vi, 1.375rem);
     margin-inline: auto;
     max-width: 45ch;
-    line-height: 1.75rem;
+    line-height: 1.5;
+    text-wrap: balance;
 }
 
 .btn-cta {
@@ -322,6 +317,19 @@ section p:last-of-type {
     text-align: left;
 }
 
+.card h3{
+    font-size: clamp(1.125rem, 0.9264rem + 0.7477vi, 1.375rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 100%;
+    margin: var(--mb-m) auto var(--mb-xs);
+}
+
+.column-txt{
+    font-size:1rem;
+    line-height: 1.5;
+}
+
 #servicos  .full-body-txt {
     margin-inline:0px ;
     margin-bottom:var(--mb-l);
@@ -356,9 +364,7 @@ section p:last-of-type {
     width:100%;
 }
 
-.card h3{
-    margin: var(--mb-s) auto var(--mb-xxs);
-}
+
 
 .card p{
     font-size:1rem;
@@ -466,19 +472,15 @@ section p:last-of-type {
 
 #contato > .wrapper > p:first-of-type {
     margin-bottom: var(--mb-l);
-   
     display:flex;
     justify-content: flex-start;
     margin-inline:0px;
     text-align:center;
-   
-
 }
 
 #contato h2{
     margin-bottom: var(--mb-xs);
     text-align:center;
-    margin-inline:0px;
 }
 
 .contato-list .full-body-txt{
@@ -545,7 +547,7 @@ section p:last-of-type {
 }
 
 #futuro h2, #futuro p{
-    text-align: left;
+    text-align: center;
     max-width: 60ch;
 }
 
@@ -607,7 +609,7 @@ footer div img{
     transition:.1s ease-in;
 }
 
-@media(min-width: 61rem){
+@media(min-width: 60rem){
    
     .navbar{
         max-width:88vw;
@@ -658,6 +660,10 @@ footer div img{
         margin-bottom:var(--mb-xl);
     }
 
+    .card h3{
+        margin: var(--mb-s) auto var(--mb-xs);
+    }
+
     .card__wrapper{
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -670,6 +676,12 @@ footer div img{
         text-align: center;
         max-width: 60ch;
     }
+
+
+    #contato > .wrapper > p:first-of-type , #contato h2 {
+        text-align:center;
+    }
+
 
     .contato-list .full-body-txt{
         font-size:var(--fs-full-body-width);
@@ -709,3 +721,15 @@ footer div img{
 .display-none{display: none;}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+  
